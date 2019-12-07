@@ -14,28 +14,32 @@ void update(struct Teilnehmer * Informationen) {
     for(int i = 0; i < 100; i++) {
         if(Informationen[i].Tischnummer == 0) {
             Informationen[i].Tischnummer = rand() % 4 + 1;
+            printf("\n");
             printf("Vorname: %s\tNachname: %s\t\tBerufsbezeichnung: %s\tTischnummer: %i\n", Informationen[i].Vorname, Informationen[i].Nachname, Informationen[i].Berufsbezeichnung, Informationen[i].Tischnummer);
+            printf("\n");
             return;
         }
     }
 }
 
 void ausgabeUnsortiert(struct Teilnehmer * Informationen){
+    printf("\n");
     for(int i = 0; i < 100; i++){
         if(Informationen[i].Tischnummer != 0) {
             printf("Vorname: %s\tNachname: %s\t\tBerufsbezeichnung: %s\tTischnummer: %i\n", Informationen[i].Vorname, Informationen[i].Nachname, Informationen[i].Berufsbezeichnung, Informationen[i].Tischnummer);
         }
     }
+    printf("\n");
 }
 
 void ausgabeSortiert(struct Teilnehmer * Informationen){
-    // ausgabeUnsortiert(Informationen);
     printf("\n");
     for(int q = 1; q < 5; q++) {
         for(int w = 0; w < 100; w++) {
-            if( (Informationen[w].Tischnummer == q) && ( Informationen[w].Tischnummer != -1) ) printf("Vorname: %s\tNachname: %s\t\tBerufsbezeichnung: %s\tTischnummer: %i\n", Informationen[w].Vorname, Informationen[w].Nachname, Informationen[w].Berufsbezeichnung, Informationen[w].Tischnummer);
+            if( (Informationen[w].Tischnummer == q) && ( Informationen[w].Tischnummer != 0) ) printf("Vorname: %s\tNachname: %s\t\tBerufsbezeichnung: %s\tTischnummer: %i\n", Informationen[w].Vorname, Informationen[w].Nachname, Informationen[w].Berufsbezeichnung, Informationen[w].Tischnummer);
         }
     }
+    printf("\n");
 }
 
 
@@ -63,10 +67,12 @@ void neuerTeilnehmer(struct Teilnehmer * Informationen){
 
 void menu(struct Teilnehmer * Informationen){
     int Option;
-    printf("Wählen Sie einer der folgenden Option aus und geben Sie die dazugehörige Zahl an, um mit dieser Option fortzufahren.\n");
+
+    printf("\nWählen Sie einer der folgenden Option aus und geben Sie die dazugehörige Zahl an, um mit dieser Option fortzufahren.\n");
         printf("Teilnehmer unsortiert anzeigen [1]\nTeilnehmerliste nach Tischen sortiert [2]\nneuen Teilnehmer erfassen [3]\nProgramm beenden [4].\n");
-        printf("Geben Sie nun ihre Option (Zahl) ein mit der Sie fortfahren möchten.\n");
-        scanf("%i", &Option); 
+        printf("Geben Sie nun ihre Option (Zahl) ein mit der Sie fortfahren möchten.\n\n\n");
+        
+        scanf("%d", &Option);
         if(Option == 1){
             ausgabeUnsortiert(Informationen);
             menu(Informationen);
@@ -82,7 +88,7 @@ void menu(struct Teilnehmer * Informationen){
         else if(Option == 4){
             printf("Das Programm wird beendet.\n");
             exit(0);
-        }else{
+        } else {
             printf("Ihre Eingabe war ungültig, bitte versuchen Sie es erneut.\n");
             menu(Informationen);
         }

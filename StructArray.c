@@ -17,6 +17,7 @@ int main(){
 
     init(Informationen);
     menu(Informationen);
-      
+    int lul = getchar();
+    putchar(lul);
     return 0;
 }

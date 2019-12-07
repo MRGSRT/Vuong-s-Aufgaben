@@ -1,1 +1,1 @@
-# Vuong-s-Aufgaben
+# Vuongs Struct Aufgabe

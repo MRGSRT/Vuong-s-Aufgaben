@@ -76,7 +76,7 @@ void menu(struct Teilnehmer * Informationen){
         scanf("%d", &Option);
         if(Option == 1){
             ausgabeUnsortiert(Informationen);
-            menu(Informationen);
+            //menu(Informationen);
         }
         else if(Option == 2){
             ausgabeSortiert(Informationen);

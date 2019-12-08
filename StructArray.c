@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "functions.h"
- 
+
 int main(){
     printf("Hallo Benutzer, Ich verwalte Ihre Teilnehmerliste.\n\n");
     struct Teilnehmer Informationen [100] = {
@@ -16,8 +16,7 @@ int main(){
     };
 
     init(Informationen);
-    menu(Informationen);
-    int lul = getchar();
-    putchar(lul);
-    return 0;
+    while(1) {
+        menu(Informationen);
+    }
 }

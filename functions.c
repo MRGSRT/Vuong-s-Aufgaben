@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include "functions.h"
+
 void init(struct Teilnehmer * Informationen){
     srand(time(NULL));
     for(int i = 0; i < 6; i++){                          
@@ -79,17 +80,17 @@ void menu(struct Teilnehmer * Informationen){
         }
         else if(Option == 2){
             ausgabeSortiert(Informationen);
-            menu(Informationen);
+            //menu(Informationen);
         }
         else if(Option == 3){
             neuerTeilnehmer(Informationen);
-            menu(Informationen);
+            //menu(Informationen);
         }
         else if(Option == 4){
             printf("Das Programm wird beendet.\n");
             exit(0);
         } else {
             printf("Ihre Eingabe war ungültig, bitte versuchen Sie es erneut.\n");
-            menu(Informationen);
+            //menu(Informationen);
         }
 }
